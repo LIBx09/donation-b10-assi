@@ -1,5 +1,14 @@
 const historyTab = document.getElementById("history-tab");
 const donationTab = document.getElementById("donation-tab");
+
+donationTab.addEventListener("click", function () {
+  donationTab.classList.add("text-[#111111]", "bg-[#B4F461]");
+  historyTab.classList.remove("text-[#111111]", "bg-[#B4F461]");
+  historyTab.classList.add("text-[#111111B3]");
+  document.getElementById("history-page").classList.add("hidden");
+  document.getElementById("donation-page").classList.remove("hidden");
+});
+
 historyTab.addEventListener("click", function () {
   historyTab.classList.add("text-[#111111]", "bg-[#B4F461]");
 
