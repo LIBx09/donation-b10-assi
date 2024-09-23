@@ -61,46 +61,77 @@
     </header>
     <!--  -->
     <!--  -->
-    <!--  -->
+    <!-- donation page -->
     <main class="w-10/12 mx-auto space-y-5">
-      <div class="hero border border-slate-300-400 rounded-xl mt-20">
-        <div class="hero-content flex-col lg:flex-row">
-          <img
-            src="assets/quota-protest.png"
-            class="max-w-md rounded-lg shadow-2xl"
-          />
-          <div>
-            <div
-              class="flex items-center bg-[#1111110D] w-40 p-2 rounded-xl mb-5"
-            >
-              <img src="assets/coin.png" alt="" />
-              <span id="donated-money"></span>
-            </div>
-            <h1 class="text-2xl font-bold">
-              Donate for Flood at Noakhali, Bangladesh!
-            </h1>
-            <p class="py-6 text-base text-[#111111B3]">
-              The recent floods in Noakhali have caused significant damage to
-              homes infrastructure. Your donation will help provide essential
-              supplies and to those affected by this disaster. Every
-              contribution, big or small, makes difference. Please join us in
-              supporting the relief efforts and making a positive impact on the
-              lives of those in need.
-            </p>
+      <section>
+        <div class="flex justify-center mt-10">
+          <button
+            id="donation-tab"
+            class="w-1/2 py-2 rounded-l-md text-[#111111] focus:outline-none transition-colors duration-200 font-semibold border bg-[#B4F461]"
+          >
+            Donation
+          </button>
+          <button
+            id="history-tab"
+            class="w-1/2 py-2 rounded-r-md text-[#111111B3] focus:outline-none transition-colors duration-200 font-semibold border bg-[]"
+          >
+            history
+          </button>
+        </div>
+        <div
+          id="donation-page"
+          class="hero border border-slate-300-400 rounded-xl mt-10"
+        >
+          <div class="hero-content flex-col lg:flex-row">
+            <img
+              src="assets/quota-protest.png"
+              class="max-w-md rounded-lg shadow-2xl"
+            />
             <div>
-              <input
-                type="text"
-                placeholder="Write Donation Amount"
-                class="input input-bordered input-md w-full"
-                id="get-donate"
-              />
+              <div
+                class="flex items-center bg-[#1111110D] w-36 p-2 rounded-xl mb-5"
+              >
+                <img src="assets/coin.png" alt="" />
+                <span id="donated-money">0 BDT</span>
+              </div>
+              <h1 id="donation-title" class="text-2xl font-bold">
+                Donate for Flood at Noakhali, Bangladesh!
+              </h1>
+              <p class="py-6 text-base text-[#111111B3]">
+                The recent floods in Noakhali have caused significant damage to
+                homes infrastructure. Your donation will help provide essential
+                supplies and to those affected by this disaster. Every
+                contribution, big or small, makes difference. Please join us in
+                supporting the relief efforts and making a positive impact on
+                the lives of those in need.
+              </p>
+              <div>
+                <input
+                  type="text"
+                  placeholder="Write Donation Amount"
+                  class="input input-bordered input-md w-full"
+                  id="get-donate"
+                />
+              </div>
+              <button id="donate" class="btn mt-5 w-full bg-[#B4F461] donate">
+                Donate Now
+              </button>
             </div>
-            <button id="donate" class="btn mt-5 w-full bg-[#B4F461] donate">
-              Donate Now
-            </button>
           </div>
         </div>
-      </div>
+      </section>
+      <!--  -->
+      <!--  -->
+      <!-- history page -->
+      <section>
+        <div
+          id="history-page"
+          class="hidden p-4 rounded-lg shadow-md border"
+        ></div>
+      </section>
+      <!--  -->
+      <!--  -->
+      <!-- blog page -->
     </main>
     <footer class="bg-[#F9F7F3] h-24 mt-10"></footer>
     <script src="js/main.js"></script>
