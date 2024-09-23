@@ -54,11 +54,14 @@
           </div>
           <div class="navbar-end flex items-center">
             <img src="assets/coin.png" alt="" />
-            <span>5500 BDT</span>
+            <span id="accounts"></span>
           </div>
         </div>
       </div>
     </header>
+    <!--  -->
+    <!--  -->
+    <!--  -->
     <main class="w-10/12 mx-auto space-y-5">
       <div class="hero border border-slate-300-400 rounded-xl mt-20">
         <div class="hero-content flex-col lg:flex-row">
@@ -68,10 +71,10 @@
           />
           <div>
             <div
-              class="flex items-center bg-[#1111110D] w-32 p-2 rounded-xl mb-5"
+              class="flex items-center bg-[#1111110D] w-40 p-2 rounded-xl mb-5"
             >
               <img src="assets/coin.png" alt="" />
-              <span>5500 BDT</span>
+              <span id="donated-money"></span>
             </div>
             <h1 class="text-2xl font-bold">
               Donate for Flood at Noakhali, Bangladesh!
@@ -88,80 +91,13 @@
               <input
                 type="text"
                 placeholder="Write Donation Amount"
-                class="input input-bordered input-md w-full max-w-xs"
+                class="input input-bordered input-md w-full"
+                id="get-donate"
               />
             </div>
-            <button class="btn btn-primary mt-5">Get Started</button>
-          </div>
-        </div>
-      </div>
-      <div class="hero border border-slate-300-400 rounded-xl mt-20">
-        <div class="hero-content flex-col lg:flex-row">
-          <img
-            src="assets/quota-protest.png"
-            class="max-w-md rounded-lg shadow-2xl"
-          />
-          <div>
-            <div
-              class="flex items-center bg-[#1111110D] w-32 p-2 rounded-xl mb-5"
-            >
-              <img src="assets/coin.png" alt="" />
-              <span>5500 BDT</span>
-            </div>
-            <h1 class="text-2xl font-bold">
-              Donate for Flood at Noakhali, Bangladesh!
-            </h1>
-            <p class="py-6 text-base text-[#111111B3]">
-              The recent floods in Noakhali have caused significant damage to
-              homes infrastructure. Your donation will help provide essential
-              supplies and to those affected by this disaster. Every
-              contribution, big or small, makes difference. Please join us in
-              supporting the relief efforts and making a positive impact on the
-              lives of those in need.
-            </p>
-            <div>
-              <input
-                type="text"
-                placeholder="Write Donation Amount"
-                class="input input-bordered input-md w-full max-w-xs"
-              />
-            </div>
-            <button class="btn btn-primary mt-5">Get Started</button>
-          </div>
-        </div>
-      </div>
-      <div class="hero border border-slate-300-400 rounded-xl mt-20">
-        <div class="hero-content flex-col lg:flex-row">
-          <img
-            src="assets/quota-protest.png"
-            class="max-w-md rounded-lg shadow-2xl"
-          />
-          <div>
-            <div
-              class="flex items-center bg-[#1111110D] w-32 p-2 rounded-xl mb-5"
-            >
-              <img src="assets/coin.png" alt="" />
-              <span>5500 BDT</span>
-            </div>
-            <h1 class="text-2xl font-bold">
-              Donate for Flood at Noakhali, Bangladesh!
-            </h1>
-            <p class="py-6 text-base text-[#111111B3]">
-              The recent floods in Noakhali have caused significant damage to
-              homes infrastructure. Your donation will help provide essential
-              supplies and to those affected by this disaster. Every
-              contribution, big or small, makes difference. Please join us in
-              supporting the relief efforts and making a positive impact on the
-              lives of those in need.
-            </p>
-            <div>
-              <input
-                type="text"
-                placeholder="Write Donation Amount"
-                class="input input-bordered input-md w-full max-w-xs"
-              />
-            </div>
-            <button class="btn btn-primary mt-5">Get Started</button>
+            <button id="donate" class="btn mt-5 w-full bg-[#B4F461] donate">
+              Donate Now
+            </button>
           </div>
         </div>
       </div>
