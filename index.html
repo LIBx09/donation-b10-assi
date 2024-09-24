@@ -10,53 +10,60 @@
       type="text/css"
     />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              lexend: "lexend",
+            },
+          },
+        },
+      };
+    </script>
   </head>
-  <body>
-    <header class="bg-[#F9F7F3] h-24">
-      <div class="navbar">
-        <div class="w-10/12 mx-auto">
-          <div class="navbar-start">
-            <div class="dropdown">
-              <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M4 6h16M4 12h8m-8 6h16"
-                  />
-                </svg>
-              </div>
-              <ul
-                tabindex="0"
-                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
-              >
-                <li><a>Donation</a></li>
-              </ul>
-            </div>
-            <a href="accordion.html" class="btn btn-ghost text-xl bg-[#B4F461]"
+  <body class="font-lexend">
+    <header class="bg-[#F9F7F3] sticky top-1 z-10 h-20">
+      <div class="backdrop-blur-sm">
+        <div class="flex justify-between items-center w-10/12 mx-auto">
+          <div>
+            <a
+              href="accordion.html"
+              class="btn btn-ghost text-xl bg-[#B4F461] mr-5"
               >Blog</a
             >
           </div>
-          <div class="navbar-center hidden lg:flex">
-            <ul class="menu menu-horizontal px-1">
-              <div class="flex items-center gap-2">
-                <img src="assets/logo.png" alt="" class="h-9" />
-                <a class="text-[#111111] text-2xl font-semibold"
-                  >Donate Bangladesh</a
-                >
-              </div>
-            </ul>
+          <div class="flex items-center gap-2">
+            <img src="assets/logo.png" alt="" class="w-10" />
+            <h2 class="text-[#111111] text-sm lg:text-2xl font-semibold">
+              Donate Bangladesh
+            </h2>
           </div>
-          <div class="navbar-end flex items-center">
-            <img src="assets/coin.png" alt="" />
+          <div class="flex justify-center items-center gap-2">
+            <img src="assets/coin.png" alt="" class="" />
             <span id="accounts"></span>
+          </div>
+        </div>
+        <div class="rounded-lg h-16">
+          <div class="w-10/12 mx-auto flex mt-7">
+            <button
+              id="donation-tab"
+              class="w-1/2 py-2 rounded-l-md text-[#111111] focus:outline-none transition-colors duration-200 font-semibold border bg-[#B4F461] cursor-pointer hover:bg-slate-400"
+            >
+              Donation
+            </button>
+            <button
+              id="history-tab"
+              class="w-1/2 py-2 rounded-r-md text-[#111111B3] focus:outline-none transition-colors duration-200 font-semibold border cursor-pointer hover:bg-slate-400"
+            >
+              history
+            </button>
           </div>
         </div>
       </div>
@@ -65,29 +72,13 @@
     <!--  -->
     <!-- donation page -->
     <main class="w-10/12 mx-auto space-y-5">
-      <section>
-        <div class="flex justify-center mt-10">
-          <button
-            id="donation-tab"
-            class="w-1/2 py-2 rounded-l-md text-[#111111] focus:outline-none transition-colors duration-200 font-semibold border bg-[#B4F461]"
-          >
-            Donation
-          </button>
-          <button
-            id="history-tab"
-            class="w-1/2 py-2 rounded-r-md text-[#111111B3] focus:outline-none transition-colors duration-200 font-semibold border bg-[]"
-          >
-            history
-          </button>
-        </div>
-      </section>
       <section id="donation-page">
         <!-- card one -->
-        <div class="hero border border-slate-300-400 rounded-xl mt-10">
+        <div class="hero border border-slate-300-400 rounded-xl mt-28">
           <div class="hero-content flex-col lg:flex-row">
             <img
-              src="assets/quota-protest.png"
-              class="max-w-md rounded-lg shadow-2xl"
+              src="assets/noakhali.png"
+              class="lg:max-w-md rounded-lg shadow-2xl"
             />
             <div>
               <div
@@ -128,8 +119,8 @@
         <div class="hero border border-slate-300-400 rounded-xl mt-10">
           <div class="hero-content flex-col lg:flex-row">
             <img
-              src="assets/quota-protest.png"
-              class="max-w-md rounded-lg shadow-2xl"
+              src="assets/feni.png"
+              class="lg:max-w-md rounded-lg shadow-2xl"
             />
             <div>
               <div
@@ -171,7 +162,7 @@
           <div class="hero-content flex-col lg:flex-row">
             <img
               src="assets/quota-protest.png"
-              class="max-w-md rounded-lg shadow-2xl"
+              class="lg:max-w-md rounded-lg shadow-2xl"
             />
             <div>
               <div
@@ -215,7 +206,7 @@
       <section>
         <div
           id="history-page"
-          class="hidden p-4 rounded-lg shadow-md border"
+          class="hidden p-4 rounded-lg shadow-md border mt-24"
         ></div>
       </section>
       <!--modal div -->

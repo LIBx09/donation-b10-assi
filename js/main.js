@@ -24,9 +24,11 @@ function handleDonation(buttonId, inputId, donatedId, location) {
   const donationButton = document.getElementById(buttonId);
 
   donationButton.addEventListener("click", function () {
-    const donateAmount = parseFloat(document.getElementById(inputId).value);
+    const inputValue = document.getElementById(inputId);
+    const donateAmount = parseFloat(inputValue.value);
     if (isNaN(donateAmount) || donateAmount <= 0) {
       alert("Please enter the valid donation amount.");
+      inputValue.value = "";
       return;
     }
 
@@ -69,7 +71,7 @@ function updateMainAccounts(newBalance) {
 
   account.textContent = newBalance + " " + "BDT";
 }
-updateMainAccounts(100000);
+updateMainAccounts(10000);
 
 handleDonation(
   "donate-btn-one",
