@@ -59,7 +59,7 @@ function handleDonation(buttonId, inputId, donatedId, location) {
     historyItem.innerHTML = `
     <h4 class="text-[#111111] font-bold text-xl mb-2">${donateAmount} Taka is Donated for Flood Relief in ${location}
     </h4>
-    <h4 class="text-[#111111B3] text-sm font-normal">${new Date().toLocaleString()}</h4>
+    <h4 class="text-[#111111B3] text-sm font-normal">Date: ${new Date().toGMTString()}</h4>
   `;
     const historyWal = document.getElementById("history-page");
     historyWal.insertBefore(historyItem, historyWal.firstChild);
