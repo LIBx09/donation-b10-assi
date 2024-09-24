@@ -1,6 +1,7 @@
 const historyTab = document.getElementById("history-tab");
 const donationTab = document.getElementById("donation-tab");
 
+// Toggle between donation and history tabs
 donationTab.addEventListener("click", function () {
   donationTab.classList.add("text-[#111111]", "bg-[#B4F461]");
   historyTab.classList.remove("text-[#111111]", "bg-[#B4F461]");
@@ -13,18 +14,18 @@ historyTab.addEventListener("click", function () {
   historyTab.classList.add("text-[#111111]", "bg-[#B4F461]");
   donationTab.classList.remove("text-[#111111]", "bg-[#B4F461]");
   donationTab.classList.add("text-[#111111B3]");
-
   document.getElementById("donation-page").classList.add("hidden");
   document.getElementById("history-page").classList.remove("hidden");
 });
 
+// Function to handle donation logic
 function handleDonation(buttonId, inputId, donatedId, location) {
-  const donationButton = document.getElementById(buttonId);
+  const donateButton = document.getElementById(buttonId);
 
-  donationButton.addEventListener("click", function () {
+  donateButton.addEventListener("click", function () {
     const donateAmount = parseFloat(document.getElementById(inputId).value);
     if (isNaN(donateAmount) || donateAmount <= 0) {
-      alert("Please enter the valid donation amount.");
+      alert("Please enter a valid donation amount.");
       return;
     }
 
@@ -34,55 +35,60 @@ function handleDonation(buttonId, inputId, donatedId, location) {
     );
 
     if (donateAmount > mainCurrentBalance) {
-      alert("Insufficient funds in the main accounts.");
+      alert("Insufficient funds in the main account.");
       return;
     }
 
     let newBalance = mainCurrentBalance - donateAmount;
     updateMainAccounts(newBalance);
 
-    let donateMoney = document.getElementById(donatedId);
-    let currentDonated = parseFloat(donateMoney.textContent.split(" ")[0] || 0);
+    let donateMoneyElement = document.getElementById(donatedId);
+    let currentDonated = parseFloat(
+      donateMoneyElement.textContent.split(" ")[0] || 0
+    );
     let newDonatedBalance = currentDonated + donateAmount;
 
-    donateMoney.textContent = newDonatedBalance + " BDT";
+    donateMoneyElement.textContent = newDonatedBalance + " BDT";
 
     document.getElementById(inputId).value = "";
 
-    // const donationLocation = "Noakhali, Bangladesh";
+    // Update donation history
     const historyItem = document.createElement("div");
     historyItem.className = "p-4 rounded-lg shadow-md border";
     historyItem.innerHTML = `
-    <h4 class="text-[#111111] font-bold text-xl mb-2">${donateAmount} Taka is Donated for Flood Relief in ${location}
-    </h4>
-    <h4 class="text-[#111111B3] text-sm font-normal">${new Date().toLocaleString()}</h4>
-  `;
+      <h4 class="text-[#111111] font-bold text-xl mb-2">${donateAmount} Taka is donated for ${location}</h4>
+      <h4 class="text-[#111111B3] text-sm font-normal">${new Date().toLocaleString()}</h4>
+    `;
     const historyWal = document.getElementById("history-page");
     historyWal.insertBefore(historyItem, historyWal.firstChild);
   });
 }
+
+// Updating the account balance
 function updateMainAccounts(newBalance) {
   let account = document.getElementById("accounts");
-
-  account.textContent = newBalance + " " + "BDT";
+  account.textContent = newBalance + " BDT";
 }
+
+// Initialize with default balance
 updateMainAccounts(10000);
 
+// Applying the function for all three donation cards
 handleDonation(
-  "donate-btn-one",
-  "get-donate-one",
-  "donate-money-one",
-  "Noakhali, Bangladesh"
+  "donate",
+  "get-donate",
+  "donated-money",
+  "Flood Relief in Noakhali, Bangladesh"
 );
 handleDonation(
-  "donate-btn-two",
-  "get-donate-two",
-  "donate-money-two",
-  "Feni, Bangladesh"
+  "donate-2",
+  "get-donate-2",
+  "donated-money-2",
+  "Flood Relief in Feni, Bangladesh"
 );
 handleDonation(
-  "donate-btn-three",
-  "get-donate-three",
-  "donate-money-three",
-  "Quota Injured, Bangladesh"
+  "donate-3",
+  "get-donate-3",
+  "donated-money-3",
+  "Aid for Injured in Quota Movement"
 );
