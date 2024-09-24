@@ -18,6 +18,8 @@ historyTab.addEventListener("click", function () {
   document.getElementById("history-page").classList.remove("hidden");
 });
 
+const successModal = document.getElementById("my_modal_5");
+
 function handleDonation(buttonId, inputId, donatedId, location) {
   const donationButton = document.getElementById(buttonId);
 
@@ -59,6 +61,7 @@ function handleDonation(buttonId, inputId, donatedId, location) {
   `;
     const historyWal = document.getElementById("history-page");
     historyWal.insertBefore(historyItem, historyWal.firstChild);
+    successModal.showModal();
   });
 }
 function updateMainAccounts(newBalance) {
@@ -66,7 +69,7 @@ function updateMainAccounts(newBalance) {
 
   account.textContent = newBalance + " " + "BDT";
 }
-updateMainAccounts(10000);
+updateMainAccounts(100000);
 
 handleDonation(
   "donate-btn-one",
